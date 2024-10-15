@@ -15,6 +15,12 @@ export class AppService {
       return this.taskRepo.findOneBy({id})
     }
 
+    async createTask(name: string) {
+      const task = await this.taskRepo.create({name})
+      await this.taskRepo.save(task)
+      return 
+    }
+
     async doneTask(id: number) {
       const task = await this.getById(id)
       if(!task) return null

@@ -8,6 +8,6 @@ export class TaskEntity{
   @Column({type: 'text',})
   name: string;
 
-  @Column()
+  @Column({default: 'false'})
   isCompleted: boolean;
 }
